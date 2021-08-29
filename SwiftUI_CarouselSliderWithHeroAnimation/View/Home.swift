@@ -10,61 +10,94 @@ import SwiftUI
 struct Home: View {
     
     @EnvironmentObject var model: CarouselViewModel
+    @Namespace var animation
     
     var body: some View {
         
-        VStack {
-            
-            // Header
-            HStack {
+        ZStack {
+            VStack {
                 
-                Button(action: { }) {
-                    Image(systemName: "xmark")
-                        .font(.title2)
-                        .foregroundColor(.gray)
+                // Header
+                HStack {
+                    
+                    Button(action: { }) {
+                        Image(systemName: "xmark")
+                            .font(.title2)
+                            .foregroundColor(.gray)
+                    }
+                    
+                    Text("Health Tips")
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                        .padding(.leading)
+                    
+                    Spacer()
                 }
+                .padding()
                 
-                Text("Health Tips")
-                    .fontWeight(.bold)
-                    .foregroundColor(.black)
-                    .padding(.leading)
+                // Carousel // Card
                 
+                ZStack {
+                    
+                    ForEach(model.cards.indices.reversed(), id: \.self) { index in
+                        
+                        HStack {
+                            
+                            CardView(card: model.cards[index], animation: animation)
+                                .frame(width: getCardWidth(index: index), height: getCardHeight(index: index))
+                                .offset(x: getCardOffset(index: index))  // 2. DragGuestureによりここが呼ばれる、Dragした分カードをoffsetする
+                                .rotationEffect(.init(degrees: getCardRotation(index: index)))
+                            
+                            Spacer(minLength: 0)
+                        }
+                        .frame(height: 400)
+                        .offset(x: model.cards[index].offset)
+                        .gesture(DragGesture(minimumDistance: 0).onChanged({ value in
+                            onChanged(value: value, index: index)
+                        }).onEnded({ value in
+                            onEnded(value: value, index: index)
+                        }))
+
+                        
+                       
+                    }
+                }
+                .padding(.top, 25)
+                .padding(.horizontal, 30)
+                
+                Button(action: resetCards) {
+                    
+                    Image(systemName: "arrow.left")
+                        .font(.system(size: 20, weight: .semibold))
+                        .foregroundColor(.blue)
+                        .padding()
+                        .background(Color.white)
+                        .clipShape(Circle())
+                        .shadow(radius: 2)
+                }
+                .padding(.top, 35)
+                .matchedGeometryEffect(id: "arrow-button", in: animation)
+
                 Spacer()
             }
-            .padding()
             
-            // Carousel
+            // Detail View
             
-            ZStack {
-                
-                ForEach(model.cards.indices.reversed(), id: \.self) { index in
-                    
-                    HStack {
-                        model.cards[index].cardColor
-                            .frame(width: getCardWidth(index: index), height: getCardHeight(index: index))
-                            .cornerRadius(25)
-                            .offset(x: getCardOffset(index: index))  // 2. DragGuestureによりここが呼ばれる、Dragした分カードをoffsetする
-                            .rotationEffect(.init(degrees: getCardRotation(index: index)))
-                        
-                        Spacer(minLength: 0)
-                    }
-                    .frame(height: 400)
-                    .offset(x: model.cards[index].offset)
-                    .gesture(DragGesture(minimumDistance: 0).onChanged({ value in
-                        onChanged(value: value, index: index)
-                    }).onEnded({ value in
-                        onEnded(value: value, index: index)
-                    }))
-
-                    
-                   
-                }
+            if model.isShowDetail {
+                DetailView(animation: animation)
             }
-            .padding(.top, 25)
-            .padding(.horizontal, 30)
-            .background(Color.red)
+        }
+        
+    }
+    
+    func resetCards() {
+        
+        for index in model.cards.indices {
             
-            Spacer()
+            withAnimation(.spring()) {
+                model.cards[index].offset = 0
+                model.swipedCardsCount = 0
+            }
         }
     }
     

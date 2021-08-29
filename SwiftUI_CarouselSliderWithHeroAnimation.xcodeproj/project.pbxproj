@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4021E35126DBB1CE007EE2CE /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E35026DBB1CE007EE2CE /* CardView.swift */; };
+		4021E35426DBB998007EE2CE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4021E35326DBB998007EE2CE /* DetailView.swift */; };
 		4057DCB926CD554D00952281 /* SwiftUI_CarouselSliderWithHeroAnimationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4057DCB826CD554D00952281 /* SwiftUI_CarouselSliderWithHeroAnimationApp.swift */; };
 		4057DCBB26CD554D00952281 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4057DCBA26CD554D00952281 /* ContentView.swift */; };
 		4057DCBD26CD555100952281 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4057DCBC26CD555100952281 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4021E35026DBB1CE007EE2CE /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		4021E35326DBB998007EE2CE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		4057DCB526CD554D00952281 /* SwiftUI_CarouselSliderWithHeroAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUI_CarouselSliderWithHeroAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4057DCB826CD554D00952281 /* SwiftUI_CarouselSliderWithHeroAnimationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_CarouselSliderWithHeroAnimationApp.swift; sourceTree = "<group>"; };
 		4057DCBA26CD554D00952281 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -82,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				4057DCCB26CD570200952281 /* Home.swift */,
+				4021E35026DBB1CE007EE2CE /* CardView.swift */,
+				4021E35326DBB998007EE2CE /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -174,7 +180,9 @@
 				4057DCBB26CD554D00952281 /* ContentView.swift in Sources */,
 				4057DCCC26CD570200952281 /* Home.swift in Sources */,
 				4057DCB926CD554D00952281 /* SwiftUI_CarouselSliderWithHeroAnimationApp.swift in Sources */,
+				4021E35426DBB998007EE2CE /* DetailView.swift in Sources */,
 				4057DCD226CD587500952281 /* CarouselViewModel.swift in Sources */,
+				4021E35126DBB1CE007EE2CE /* CardView.swift in Sources */,
 				4057DCCF26CD582B00952281 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
