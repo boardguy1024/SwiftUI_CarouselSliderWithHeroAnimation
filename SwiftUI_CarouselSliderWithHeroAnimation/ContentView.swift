@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject var homeModel = CarouselViewModel()
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Home()
+        // Using it as Environment Object
+            .environmentObject(homeModel)
+        
     }
 }
 

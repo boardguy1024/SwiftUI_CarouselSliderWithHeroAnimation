@@ -11,6 +11,9 @@
 		4057DCBB26CD554D00952281 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4057DCBA26CD554D00952281 /* ContentView.swift */; };
 		4057DCBD26CD555100952281 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4057DCBC26CD555100952281 /* Assets.xcassets */; };
 		4057DCC026CD555100952281 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4057DCBF26CD555100952281 /* Preview Assets.xcassets */; };
+		4057DCCC26CD570200952281 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4057DCCB26CD570200952281 /* Home.swift */; };
+		4057DCCF26CD582B00952281 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4057DCCE26CD582B00952281 /* Card.swift */; };
+		4057DCD226CD587500952281 /* CarouselViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4057DCD126CD587500952281 /* CarouselViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		4057DCBC26CD555100952281 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4057DCBF26CD555100952281 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4057DCC126CD555100952281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4057DCCB26CD570200952281 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		4057DCCE26CD582B00952281 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4057DCD126CD587500952281 /* CarouselViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +58,9 @@
 		4057DCB726CD554D00952281 /* SwiftUI_CarouselSliderWithHeroAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				4057DCCA26CD56F200952281 /* ViewModel */,
+				4057DCC926CD56ED00952281 /* Model */,
+				4057DCC826CD56E500952281 /* View */,
 				4057DCB826CD554D00952281 /* SwiftUI_CarouselSliderWithHeroAnimationApp.swift */,
 				4057DCBA26CD554D00952281 /* ContentView.swift */,
 				4057DCBC26CD555100952281 /* Assets.xcassets */,
@@ -67,6 +76,30 @@
 				4057DCBF26CD555100952281 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4057DCC826CD56E500952281 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4057DCCB26CD570200952281 /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4057DCC926CD56ED00952281 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4057DCCE26CD582B00952281 /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4057DCCA26CD56F200952281 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4057DCD126CD587500952281 /* CarouselViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +172,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4057DCBB26CD554D00952281 /* ContentView.swift in Sources */,
+				4057DCCC26CD570200952281 /* Home.swift in Sources */,
 				4057DCB926CD554D00952281 /* SwiftUI_CarouselSliderWithHeroAnimationApp.swift in Sources */,
+				4057DCD226CD587500952281 /* CarouselViewModel.swift in Sources */,
+				4057DCCF26CD582B00952281 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
